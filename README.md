@@ -10,80 +10,80 @@ WebSocket streams.
 
 ## Contents
 
-- [Features](#features)
-- [Install](#install)
-- [Client](#client)
-- [Stream](#stream)
-- [Common Issues](#common-issues)
-- [Examples](#examples)
-- [Contributing](#contributing)
+-   [Features](#features)
+-   [Install](#install)
+-   [Client](#client)
+-   [Stream](#stream)
+-   [Common Issues](#common-issues)
+-   [Examples](#examples)
+-   [Contributing](#contributing)
 
 ## Features
 
-- [x] Fully typed.
-- [x] Fully asynchronous promise based API.
-- [x] Extensible `AlpacaClient` and `AlpacaStream` classes.
-- [x] Built-in rate limiting.
-- [x] Built-in number and date parsing.
-- [x] A 1:1 mapping of the official Alpaca [docs](https://docs.alpaca.markets/).
-- [x] Auto-transpiled modern ESM alternative.
-- [x] OAuth integration support.
-- [x] Minified and non-minified bundles.
-- [x] Various bundles provided:
-  - `alpaca.js` - ESM bundle (for node)
-  - `alpaca.bundle.js` - ESM bundle with dependencies (for node)
-  - `alpaca.browser.js` - UMD bundle (for browser)
-  - `alpaca.browser.modern.js` - ESM modern bundle (for browser)
+-   [x] Fully typed.
+-   [x] Fully asynchronous promise based API.
+-   [x] Extensible `AlpacaClient` and `AlpacaStream` classes.
+-   [x] Built-in rate limiting.
+-   [x] Built-in number and date parsing.
+-   [x] A 1:1 mapping of the official Alpaca [docs](https://docs.alpaca.markets/).
+-   [x] Auto-transpiled modern ESM alternative.
+-   [x] OAuth integration support.
+-   [x] Minified and non-minified bundles.
+-   [x] Various bundles provided:
+    -   `alpaca.js` - ESM bundle (for node)
+    -   `alpaca.bundle.js` - ESM bundle with dependencies (for node)
+    -   `alpaca.browser.js` - UMD bundle (for browser)
+    -   `alpaca.browser.modern.js` - ESM modern bundle (for browser)
 
 ## Install
 
 From NPM:
 
 ```cmd
-> npm i @master-chief/alpaca
+> npm i @umerx/alpaca
 ```
 
 From GitHub:
 
-- [CommonJS](./dist/cjs)
-- [Typescript](./src)
-- [ES](./dist/mjs)
-- [ES bundled ](./dist/alpaca.js)
-- [ES bundled with dependencies](./dist/alpaca.bundle.js)
-- [ES6 + UMD (classic)](./dist/alpaca.browser.js)
-- [ES6 + ESM (modern) ](./dist/alpaca.browser.modern.js)
+-   [CommonJS](./dist/cjs)
+-   [Typescript](./src)
+-   [ES](./dist/mjs)
+-   [ES bundled ](./dist/alpaca.js)
+-   [ES bundled with dependencies](./dist/alpaca.bundle.js)
+-   [ES6 + UMD (classic)](./dist/alpaca.browser.js)
+-   [ES6 + ESM (modern) ](./dist/alpaca.browser.modern.js)
 
 From these popular CDNs:
 
-- [UNPKG](https://unpkg.com/browse/@master-chief/alpaca/)
-- [JSDelivr](https://cdn.jsdelivr.net/npm/@master-chief/alpaca/)
-- [SkyPack](https://cdn.skypack.dev/@master-chief/alpaca)
+-   [UNPKG](https://unpkg.com/browse/@umerx/alpaca/)
+-   [JSDelivr](https://cdn.jsdelivr.net/npm/@umerx/alpaca/)
+-   [SkyPack](https://cdn.skypack.dev/@umerx/alpaca)
 
 ## Import
 
 Import with CommonJS:
 
 ```typescript
-let { AlpacaClient, AlpacaStream } = require('@master-chief/alpaca');
+let { AlpacaClient, AlpacaStream } = require('@umerx/alpaca');
 ```
 
 Import with ESM:
 
 ```typescript
-import { AlpacaClient, AlpacaStream } from '@master-chief/alpaca';
+import { AlpacaClient, AlpacaStream } from '@umerx/alpaca';
 ```
 
 Import as script:
 
 ```html
-<script src="https://unpkg.com/@master-chief/alpaca/dist/alpaca.browser.min.js"></script>
+<script src="https://unpkg.com/@umerx/alpaca/dist/alpaca.browser.min.js"></script>
 ```
 
 Import as module:
 
 ```html
 <script type="module">
-  import alpaca from 'alpaca.browser.modern.min.js';
+	import alpaca from 'alpaca.browser.modern.min.js';
 </script>
 ```
 
@@ -97,13 +97,13 @@ own. Paper account key detection is automatic. Using OAuth? Simply pass an
 
 ```typescript
 const client = new AlpacaClient({
-  credentials: {
-    key: 'xxxxxx',
-    secret: 'xxxxxxxxxxxx',
-    // access_token: 'xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx',
-    paper: true,
-  },
-  rate_limit: true,
+	credentials: {
+		key: 'xxxxxx',
+		secret: 'xxxxxxxxxxxx',
+		// access_token: 'xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx',
+		paper: true,
+	},
+	rate_limit: true,
 });
 ```
 
@@ -133,49 +133,49 @@ The following methods are available on the client.
 
 #### Account
 
-- [isAuthenticated](#isauthenticated)
-- [getAccount](#getaccount)
-- [getOrder](#getorder)
-- [getOrders](#getorders)
-- [placeOrder](#placeorder)
-- [replaceOrder](#replaceorder)
-- [cancelOrder](#cancelorder)
-- [cancelOrders](#cancelorders)
-- [getPosition](#getposition)
-- [getPositions](#getpositions)
-- [closePosition](#closePosition)
-- [closePositions](#closePositions)
-- [getAsset](#getasset)
-- [getAssets](#getassets)
-- [getWatchlist](#getwatchlist)
-- [getWatchlists](#getwatchlists)
-- [createWatchlist](#createwatchlist)
-- [updateWatchlist](#updatewatchlist)
-- [addToWatchlist](#addtowatchlist)
-- [removeFromWatchlist](#removefromwatchlist)
-- [deleteWatchlist](#deletewatchlist)
-- [getCalendar](#getcalendar)
-- [getClock](#getclock)
-- [getAccountConfigurations](#getAccountConfigurations)
-- [updateAccountConfigurations](#updateAccountConfigurations)
-- [getAccountActivities](#getAccountActivities)
-- [getPortfolioHistory](#getPortfolioHistory)
+-   [isAuthenticated](#isauthenticated)
+-   [getAccount](#getaccount)
+-   [getOrder](#getorder)
+-   [getOrders](#getorders)
+-   [placeOrder](#placeorder)
+-   [replaceOrder](#replaceorder)
+-   [cancelOrder](#cancelorder)
+-   [cancelOrders](#cancelorders)
+-   [getPosition](#getposition)
+-   [getPositions](#getpositions)
+-   [closePosition](#closePosition)
+-   [closePositions](#closePositions)
+-   [getAsset](#getasset)
+-   [getAssets](#getassets)
+-   [getWatchlist](#getwatchlist)
+-   [getWatchlists](#getwatchlists)
+-   [createWatchlist](#createwatchlist)
+-   [updateWatchlist](#updatewatchlist)
+-   [addToWatchlist](#addtowatchlist)
+-   [removeFromWatchlist](#removefromwatchlist)
+-   [deleteWatchlist](#deletewatchlist)
+-   [getCalendar](#getcalendar)
+-   [getClock](#getclock)
+-   [getAccountConfigurations](#getAccountConfigurations)
+-   [updateAccountConfigurations](#updateAccountConfigurations)
+-   [getAccountActivities](#getAccountActivities)
+-   [getPortfolioHistory](#getPortfolioHistory)
 
 #### Market Data v1
 
-- [getLastTrade_v1](#getLastTrade_v1)
-- [getLastQuote_v1](#getLastQuote_v1)
-- [getBars_v1](#getBars_v1)
+-   [getLastTrade_v1](#getLastTrade_v1)
+-   [getLastQuote_v1](#getLastQuote_v1)
+-   [getBars_v1](#getBars_v1)
 
 #### Market Data v2
 
-- [getTrades](#getTrades)
-- [getLatestTrade](#getLatestTrade)
-- [getQuotes](#getQuotes)
-- [getBars](#getBars)
-- [getSnapshot](#getSnapshot)
-- [getSnapshots](#getSnapshots)
-- [getNews](#getNews)
+-   [getTrades](#getTrades)
+-   [getLatestTrade](#getLatestTrade)
+-   [getQuotes](#getQuotes)
+-   [getBars](#getBars)
+-   [getSnapshot](#getSnapshot)
+-   [getSnapshots](#getSnapshots)
+-   [getNews](#getNews)
 
 #### isAuthenticated
 
@@ -205,13 +205,13 @@ await client.getOrders({ limit: 25, status: 'all' });
 
 ```typescript
 await client.placeOrder({
-  symbol: 'SPY',
-  qty: 1,
-  // or
-  // notional: 100,
-  side: 'buy',
-  type: 'market',
-  time_in_force: 'day',
+	symbol: 'SPY',
+	qty: 1,
+	// or
+	// notional: 100,
+	side: 'buy',
+	type: 'market',
+	time_in_force: 'day',
 });
 ```
 
@@ -219,8 +219,8 @@ await client.placeOrder({
 
 ```typescript
 await client.replaceOrder({
-  order_id: '69a3db8b-cc63-44da-a26a-e3cca9490308',
-  limit_price: 9.74,
+	order_id: '69a3db8b-cc63-44da-a26a-e3cca9490308',
+	limit_price: 9.74,
 });
 ```
 
@@ -288,8 +288,8 @@ await client.getWatchlists();
 
 ```typescript
 await client.createWatchlist({
-  name: 'my watchlist',
-  symbols: ['SPY', 'DIA', 'EEM', 'XLF'],
+	name: 'my watchlist',
+	symbols: ['SPY', 'DIA', 'EEM', 'XLF'],
 });
 ```
 
@@ -297,9 +297,9 @@ await client.createWatchlist({
 
 ```typescript
 await client.updateWatchlist({
-  uuid: '2000e463-6f87-41c0-a8ba-3e40cbf67128',
-  name: 'new watchlist name',
-  symbols: ['TSLA', 'AAPL'],
+	uuid: '2000e463-6f87-41c0-a8ba-3e40cbf67128',
+	name: 'new watchlist name',
+	symbols: ['TSLA', 'AAPL'],
 });
 ```
 
@@ -307,8 +307,8 @@ await client.updateWatchlist({
 
 ```typescript
 await client.addToWatchlist({
-  uuid: '2000e463-6f87-41c0-a8ba-3e40cbf67128',
-  symbol: 'F',
+	uuid: '2000e463-6f87-41c0-a8ba-3e40cbf67128',
+	symbol: 'F',
 });
 ```
 
@@ -316,8 +316,8 @@ await client.addToWatchlist({
 
 ```typescript
 await client.removeFromWatchlist({
-  uuid: '2000e463-6f87-41c0-a8ba-3e40cbf67128',
-  symbol: 'F',
+	uuid: '2000e463-6f87-41c0-a8ba-3e40cbf67128',
+	symbol: 'F',
 });
 ```
 
@@ -349,8 +349,8 @@ await client.getAccountConfigurations();
 
 ```typescript
 await client.updateAccountConfigurations({
-  no_shorting: true,
-  suspend_trade: true,
+	no_shorting: true,
+	suspend_trade: true,
 });
 ```
 
@@ -396,9 +396,9 @@ await client.getLatestTrade({ symbol: 'SPY' });
 
 ```typescript
 await client.getTrades({
-  symbol: 'SPY',
-  start: new Date('2021-02-26T14:30:00.007Z'),
-  end: new Date('2021-02-26T14:35:00.007Z'),
+	symbol: 'SPY',
+	start: new Date('2021-02-26T14:30:00.007Z'),
+	end: new Date('2021-02-26T14:35:00.007Z'),
 });
 ```
 
@@ -425,9 +425,9 @@ console.log(trades.length)
 
 ```typescript
 await client.getQuotes({
-  symbol: 'SPY',
-  start: new Date('2021-02-26T14:30:00.007Z'),
-  end: new Date('2021-02-26T14:35:00.007Z'),
+	symbol: 'SPY',
+	start: new Date('2021-02-26T14:30:00.007Z'),
+	end: new Date('2021-02-26T14:35:00.007Z'),
 });
 ```
 
@@ -454,11 +454,11 @@ console.log(quotes.length)
 
 ```typescript
 await client.getBars({
-  symbol: 'SPY',
-  start: new Date('2021-02-26T14:30:00.007Z'),
-  end: new Date('2021-02-26T14:35:00.007Z'),
-  timeframe: '1Min',
-  // page_token: "MjAyMS0wMi0wNlQxMzowOTo0Mlo7MQ=="
+	symbol: 'SPY',
+	start: new Date('2021-02-26T14:30:00.007Z'),
+	end: new Date('2021-02-26T14:35:00.007Z'),
+	timeframe: '1Min',
+	// page_token: "MjAyMS0wMi0wNlQxMzowOTo0Mlo7MQ=="
 });
 ```
 
@@ -505,16 +505,16 @@ If you wish to use env vars, populate these fields with `process.env` on your
 own.
 
 ```typescript
-import { AlpacaStream } from '@master-chief/alpaca';
+import { AlpacaStream } from '@umerx/alpaca';
 
 const stream = new AlpacaStream({
-  credentials: {
-    key: 'xxxxxx',
-    secret: 'xxxxxxxxxxxx',
-    paper: true,
-  },
-  type: 'market_data', // or "account"
-  source: 'iex', // or "sip" depending on your subscription
+	credentials: {
+		key: 'xxxxxx',
+		secret: 'xxxxxxxxxxxx',
+		paper: true,
+	},
+	type: 'market_data', // or "account"
+	source: 'iex', // or "sip" depending on your subscription
 });
 ```
 
@@ -522,10 +522,10 @@ const stream = new AlpacaStream({
 
 The following methods are available on the stream.
 
-- [subscribe](#subscribe)
-- [unsubscribe](#unsubscribe)
-- [on](#on)
-- [getConnection](#getConnection)
+-   [subscribe](#subscribe)
+-   [unsubscribe](#unsubscribe)
+-   [on](#on)
+-   [getConnection](#getConnection)
 
 ### Channels
 
@@ -540,7 +540,7 @@ The following methods are available on the stream.
 
 ```typescript
 stream.once('authenticated', () =>
-  stream.subscribe('bars', ['SPY', 'AAPL', 'TSLA']),
+	stream.subscribe('bars', ['SPY', 'AAPL', 'TSLA']),
 );
 ```
 
@@ -573,7 +573,7 @@ If you are having difficulty getting Jest to work with this library, add this to
 
 ```js
 moduleNameMapper: {
-  '@master-chief/alpaca': '<rootDir>/node_modules/@master-chief/alpaca/dist/cjs/index.cjs',
+  '@umerx/alpaca': '<rootDir>/node_modules/@umerx/alpaca/dist/cjs/index.cjs',
 },
 ```
 
