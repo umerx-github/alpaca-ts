@@ -389,7 +389,10 @@ export class AlpacaClient {
 			data: transformed,
 		});
 	}
-
+	/**
+	 * 
+	 * @link https://docs.alpaca.markets/reference/stockbars
+	 */
 	async getBars_v2(
 		params: GetBars_v1 & { page_token?: string },
 	): Promise<{ bars: { [symbol: string]: Bar_v1[] }, next_page_token: string | null }> {
