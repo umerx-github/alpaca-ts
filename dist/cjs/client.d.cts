@@ -45,6 +45,11 @@ export declare class AlpacaClient {
     getBars_v1(params: GetBars_v1): Promise<{
         [symbol: string]: Bar_v1[];
     }>;
+    getBars_v2(params: GetBars_v1): Promise<{
+        bars: {
+            [symbol: string]: Bar_v1[];
+        };
+    }>;
     /** @deprecated Alpaca Data API v2 is currently in public beta. */
     getLastTrade_v1(params: GetLastTrade_v1): Promise<LastTrade_v1>;
     /** @deprecated Alpaca Data API v2 is currently in public beta. */

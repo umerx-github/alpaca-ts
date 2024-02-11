@@ -278,6 +278,16 @@ class AlpacaClient {
             });
         });
     }
+    getBars_v2(params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const transformed = Object.assign(Object.assign({}, params), { symbols: params.symbols.join(',') });
+            return yield this.request({
+                method: 'GET',
+                url: `${this.baseURLs.rest.market_data_v2}/bars`,
+                data: transformed,
+            });
+        });
+    }
     /** @deprecated Alpaca Data API v2 is currently in public beta. */
     getLastTrade_v1(params) {
         return __awaiter(this, void 0, void 0, function* () {

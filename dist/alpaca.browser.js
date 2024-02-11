@@ -1,5 +1,5 @@
 /*! 
- * alpaca@6.3.21
+ * alpaca@6.3.22
  * released under the permissive ISC license
  */
 
@@ -5390,6 +5390,17 @@
 	        return await this.request({
 	            method: 'GET',
 	            url: `${this.baseURLs.rest.market_data_v1}/bars/${params.timeframe}`,
+	            data: transformed,
+	        });
+	    }
+	    async getBars_v2(params) {
+	        const transformed = {
+	            ...params,
+	            symbols: params.symbols.join(','),
+	        };
+	        return await this.request({
+	            method: 'GET',
+	            url: `${this.baseURLs.rest.market_data_v2}/bars`,
 	            data: transformed,
 	        });
 	    }

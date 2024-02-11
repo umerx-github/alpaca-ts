@@ -1,5 +1,5 @@
 /*! 
- * alpaca@6.3.21
+ * alpaca@6.3.22
  * released under the permissive ISC license
  */
 
@@ -87189,6 +87189,16 @@ class AlpacaClient {
             return yield this.request({
                 method: 'GET',
                 url: `${this.baseURLs.rest.market_data_v1}/bars/${params.timeframe}`,
+                data: transformed,
+            });
+        });
+    }
+    getBars_v2(params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const transformed = Object.assign(Object.assign({}, params), { symbols: params.symbols.join(',') });
+            return yield this.request({
+                method: 'GET',
+                url: `${this.baseURLs.rest.market_data_v2}/bars`,
                 data: transformed,
             });
         });
