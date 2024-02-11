@@ -400,7 +400,7 @@ export class AlpacaClient {
 
 		return await this.request({
 			method: 'GET',
-			url: `${this.baseURLs.rest.market_data_v2}/bars`,
+			url: `${this.baseURLs.rest.market_data_v2}/stocks/bars`,
 			data: transformed,
 		});
 	}

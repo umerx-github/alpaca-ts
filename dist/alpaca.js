@@ -1,5 +1,5 @@
 /*! 
- * alpaca@6.3.22
+ * alpaca@6.3.23
  * released under the permissive ISC license
  */
 
@@ -538,7 +538,7 @@ class AlpacaClient {
             const transformed = Object.assign(Object.assign({}, params), { symbols: params.symbols.join(',') });
             return yield this.request({
                 method: 'GET',
-                url: `${this.baseURLs.rest.market_data_v2}/bars`,
+                url: `${this.baseURLs.rest.market_data_v2}/stocks/bars`,
                 data: transformed,
             });
         });
