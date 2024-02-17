@@ -30,8 +30,8 @@
 		"stock"
 	],
 	"type": "module",
-	"types": "./dist/index.d.ts",
-	"typings": "./dist/index.d.ts",
+	"types": "./dist/types/index.d.ts",
+	"typings": "./dist/types/index.d.ts",
 	"unpkg": "./dist/alpaca.js",
 	"jsdelivr": "./dist/alpaca.js",
 	"browser": "./dist/alpaca.browser.min.js",
@@ -41,7 +41,7 @@
 		"import": "./dist/mjs/index.js",
 		"require": "./dist/cjs/index.cjs",
 		"default": "./dist/alpaca.browser.min.js",
-		"types": "./dist/index.d.ts"
+		"types": "./dist/types/index.d.ts"
 	},
 	"engines": {
 		"node": ">=14"
