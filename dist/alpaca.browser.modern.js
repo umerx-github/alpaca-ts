@@ -1,5 +1,5 @@
 /*! 
- * alpaca@6.3.25
+ * alpaca@6.3.26
  * released under the permissive ISC license
  */
 
