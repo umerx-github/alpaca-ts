@@ -41,7 +41,7 @@
 		"import": "./dist/mjs/index.js",
 		"require": "./dist/cjs/index.cjs",
 		"default": "./dist/alpaca.browser.min.js",
-		"types": "./@types/index.d.ts"
+		"types": "./dist/index.d.ts"
 	},
 	"engines": {
 		"node": ">=14"
