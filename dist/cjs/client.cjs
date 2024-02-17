@@ -278,6 +278,10 @@ class AlpacaClient {
             });
         });
     }
+    /**
+     *
+     * @link https://docs.alpaca.markets/reference/stockbars
+     */
     getBars_v2(params) {
         return __awaiter(this, void 0, void 0, function* () {
             const transformed = Object.assign(Object.assign({}, params), { symbols: params.symbols.join(',') });

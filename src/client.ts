@@ -27,6 +27,7 @@ import {
 	PageOfQuotes,
 	PageOfBars,
 	Bar_v1,
+	Bar_v2,
 	LastQuote_v1,
 	LastTrade_v1,
 	Snapshot,
@@ -395,7 +396,7 @@ export class AlpacaClient {
 	 */
 	async getBars_v2(
 		params: GetBars_v1 & { page_token?: string },
-	): Promise<{ bars: { [symbol: string]: Bar_v1[] }, next_page_token: string | null }> {
+	): Promise<{ bars: { [symbol: string]: Bar_v2[] }, next_page_token: string | null }> {
 		const transformed: Omit<GetBars_v1, 'symbols'> & { symbols: string } = {
 			...params,
 			symbols: params.symbols.join(','),

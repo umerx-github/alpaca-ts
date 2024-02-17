@@ -627,6 +627,19 @@ export interface Bar_v1 {
     v: number;
 }
 /**
+ * Price and volume data during a particular time interval
+ */
+export interface Bar_v2 {
+    t: string;
+    o: number;
+    h: number;
+    l: number;
+    c: number;
+    v: number;
+    n: number;
+    vw: number;
+}
+/**
  * Last quote details for a symbol
  */
 export interface LastQuote_v1 {

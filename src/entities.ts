@@ -713,6 +713,68 @@ export interface Bar_v1 {
 }
 
 /**
+ * Price and volume data during a particular time interval
+ */
+export interface Bar_v2 {
+  /*
+  t
+  date-time
+  required
+  Timestamp in RFC-3339 format with nanosecond precision
+  */
+  t: string;
+  /*
+  o
+  double
+  required
+  Opening price
+  */
+  o: number;
+  /*
+  h
+  double
+  required
+  High price
+  */
+  h: number;
+  /*
+  l
+  double
+  required
+  Low price
+  */
+  l: number;
+  /*
+  c
+  double
+  required
+  Closing price
+  */
+  c: number;
+  /*
+  v
+  int64
+  required
+  Bar volume
+  */
+  v: number;
+  /*
+  n
+  int64
+  required
+  Trade count in the bar
+  */
+  n: number;
+  /*
+  vw
+  double
+  required
+  Volume weighted average price
+  */
+  vw: number;
+}
+
+/**
  * Last quote details for a symbol
  */
 export interface LastQuote_v1 {

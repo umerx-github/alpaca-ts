@@ -241,6 +241,10 @@ export class AlpacaClient {
             data: transformed,
         });
     }
+    /**
+     *
+     * @link https://docs.alpaca.markets/reference/stockbars
+     */
     async getBars_v2(params) {
         const transformed = {
             ...params,

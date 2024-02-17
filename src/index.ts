@@ -27,6 +27,7 @@ export {
   PortfolioHistory,
   Bar,
   Bar_v1,
+  Bar_v2,
   Quote,
   LastQuote_v1,
   LastTrade_v1,
